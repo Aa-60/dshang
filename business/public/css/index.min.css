@@ -1,0 +1,142 @@
+html,
+body,
+.index {
+    height: 100%
+}
+
+.header-nav {
+    height: 60px;
+    background-color: #1470D7;
+    position: sticky;
+    top: 0;
+    padding: 0 20px;
+    z-index:10;
+}
+
+.nav-title {
+    line-height: 60px;
+    color: #fff;
+    font-size: 18px
+}
+
+.img-box {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: #ddd;
+    border-radius: 50%;
+    margin-top: 10px;
+    overflow:hidden;
+}
+
+.nav-text {
+    line-height: 60px;
+    color: #fff;
+    margin-left: 20px;
+    font-size: 14px
+}
+
+.cursor {
+    cursor: pointer
+}
+
+.aside {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 160px;
+    height: 100%;
+    background-color: #1470D7
+}
+
+.card {
+    /* 透明 */
+    background-color: transparent;
+    
+    border: none;
+    border-radius: 0
+}
+
+.card-header {
+    padding: 0;
+    border: none;
+    background-color: transparent
+}
+
+.c-title {
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #0D5AB2;
+    font-size: 14px
+}
+
+.accordion>.card>.card-header {
+    margin: 0
+}
+
+.card-body {
+    padding: 0
+}
+
+.c-item {
+    padding: 0 20px;
+    height: 34px;
+    line-height: 34px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer
+}
+
+.c-item.active {
+    background-color: #0F62C1
+}
+.content{
+    padding: 20px;
+    margin-left: 160px;
+}
+.type-title{
+    line-height: 38px;
+}
+.search-box{
+    margin: 0 25px;
+}
+.add-type{
+    margin-top: 20px;
+}
+.table-box{
+    margin-top: 20px;
+}
+.setting-box{
+    position: relative;
+}
+.setting-box:hover .list-menu{
+    display: block;
+}
+.list-menu{
+    position: absolute;
+     left: -36px;
+   
+    top: 60px;
+    width: 100px;
+    padding: 10px 0;
+    background-color: #1470D7;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    display: none;
+}
+.menu-item:hover{
+    background-color: #0e5eb9;
+}
+.user-lable{
+    position:absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+   
+}
+.user-file{
+    display: none;
+}

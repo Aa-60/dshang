@@ -1,0 +1,20 @@
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+.clearfix-box {
+    content: '';
+    display: block;
+    clear: both
+}
+.auto-img{
+    display: block;
+    width: 100%;
+}
+.hide{
+    display:none;
+}

@@ -1,0 +1,82 @@
+html,
+body,
+.register-box {
+    height: 100%;
+    background: url("../images/ng.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.register-box {
+    padding-top: 100px
+}
+
+.register-box .register {
+    width: 480px;
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 20px
+}
+
+.register-box .title {
+    font-size: 24px;
+    color: #444;
+    text-align: center
+}
+
+.register-box .label-box {
+    width: 60px;
+    height: 38px;
+    line-height: 38px
+}
+
+.register-box .ipt-box {
+    width: 380px;
+    /* 480-60-20*2=280 */
+}
+.register-box .gl{
+    position: relative;
+}
+.register-box .ipt-box .eyebox{
+    display: block;
+    position: absolute;
+    margin-left: 310px;
+    margin-top: 5px;
+    width: 60px;
+    height: 38px;
+    border: none;
+    cursor: pointer;
+}
+.register-box .ipt-box img{
+    
+ padding: 0 13px;
+ line-height: 38px;
+}
+
+.register-box .form-box {
+    margin-top: 40px
+}
+
+.register-box .code-box {
+    width: 200px
+}
+
+.register-box .btn-box {
+    width: 180px;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.register-box .commit-btn {
+    margin-top: 20px;
+    margin-left:60px;
+    cursor: pointer;
+}
+.register-box .register-text{
+    margin-top: 20px;
+    cursor: pointer;
+}
+.register-box .error-msg {
+    color: #e4393c;
+    display: none
+}

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/public.min.css" />
+    <link rel="stylesheet" href="/css/index.min.css" />
+</head>
+
+<body>
+
+    <div class="index">
+        <div class="header-nav">
+            <div class="fl nav-title">商品管理系统</div>
+            <div class="fr clearfix">
+                <div class="fl img-box cursor">
+                    <img id="user-img" class="auto-img" src="" alt="">
+                    <label class="user-lable">
+                        <input class="user-file" type="file"/>
+                    </label>
+                </div>
+                <div class="fl nav-text" id="nickname">昵称</div>
+                <div class="fl nav-text cursor setting-box">设置
+                    <div class="list-menu">
+                        <div class="menu-item" data-target="#nickname-box" data-toggle="modal">修改昵称</div>
+                        <div class="menu-item" data-target="#password-box" data-toggle="modal">修改密码</div>
+                    </div>
+                </div>
+                <div class="fl nav-text cursor" id="logout">退出</div>
+            </div>
+        </div>
+        <div class="content-box">
+            <div class="aside">
+
+                <div class="accordion" id="accordionExample">
+
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <div class="mb-0">
+                                <div class="c-title" data-toggle="collapse" data-target="#collapseOne">
+                                    商品管理
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="c-item active">商品类型</div>
+                                <div id="product-list" class="c-item">商品列表</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header" id="headingOne1">
+                            <div class="mb-0">
+                                <div class="c-title" data-toggle="collapse" data-target="#collapseOne1">
+                                    订单管理
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="collapseOne1" class="collapse" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="c-item">订单列表</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header" id="headingOne2">
+                            <div class="mb-0">
+                                <div class="c-title" data-toggle="collapse" data-target="#collapseOne2">
+                                    数据统计
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="collapseOne2" class="collapse" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="c-item">数据图表</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- 搜索区块开始-------------------------------------------------------- -->
+            <div class="content">
+                <div class="clearfix">
+                    <div class="fl type-title">商品类型</div>
+                    <div class="fl search-box"><input type="email" id="type-name" class="form-control" placeholder="输入商品类型名称">
+                    </div>
+                    <div class="fl">
+                        <button type="button" id="search" class="btn btn-primary">搜索</button>
+                    </div>
+                </div>
+                <div class="add-type">
+                    <button type="button" class="btn btn-warning" data-toggle="modal"
+                        data-target="#exampleModal">添加商品类型</button>
+                </div>
+                <!-- 表单区块 -->
+                <!-- table-striped:换行变色 -->
+                <div class="table-box">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>类型名称</th>
+                                <th>状态</th>
+                                <th>添加时间</th>
+                                <th>更新时间</th>
+                                <th>操作</th>
+                            </tr>
+                            <!-- 表体 -->
+                        <tbody>
+                           
+                        </tbody>
+                        </thead>
+                    </table>
+                    <nav>
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item" id="prev">
+                                <a class="page-link" href="#">上一页</a>
+                            </li>
+                            <li class="page-item active"><a id="current-page" class="page-link" href="#">1</a></li>
+                            
+                            <li class="page-item" id="next">
+                                <a class="page-link" href="#">下一页</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">共<span id="total-page"></span>页</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+
+                <!-- 添加商品类型的模态框 -->
+                <div class="modal fade" id="exampleModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">添加商品类型</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- 内容输入去 -->
+                                <div class="form-group">
+                                    <label for="typename">商品类型:</label>
+                                    <div>
+                                        <input type="text" class="form-control" id="typename">
+                                    </div>
+
+                                    <!-- <small id="emailHelp" class="form-text text-muted">never share your email with anyone else.</small> -->
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                                <button id="save" type="button" class="btn btn-primary">保存</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       <!-- 修改昵称 -->
+    <div class="modal fade" id="nickname-box" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">修改昵称</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group row">
+                  <label for="new-nickname" class="col-sm-2 col-form-label">新昵称</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="new-nickname" />
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button id="commit-nickname" type="button" class="btn btn-primary">提交</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+          <!-- 修改密码 -->
+          <div class="modal fade" id="password-box" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">修改密码</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                        <label for="oldpassword">旧密码</label>
+                        <input type="text" class="form-control" id="oldpassword">
+                      </div>
+                      <div class="form-group">
+                        <label for="newpassword">新密码</label>
+                        <input type="text" class="form-control" id="newpassword">
+                      </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                 
+                  <button id="commit-pwd" type="button" class="btn btn-primary">OK</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/utils.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/index.js"></script>
+    <script src="/js/head.js"></script>
+</body>
+
+</html>

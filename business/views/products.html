@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/css/public.min.css" />
+  <link rel="stylesheet" href="/css/index.min.css" />
+  <link rel="stylesheet" href="/css/products.css" />
+</head>
+<body>
+  
+  <div class="index">
+    <div class="header-nav">
+      <div class="fl nav-title">商品管理系统</div>
+      <div class="fr clearfix">
+        <div class="fl img-box cursor">
+          <img id="user-img" class="auto-img" src="" alt="">
+          <label class="user-label">
+            <input class="user-file" type="file" />
+          </label>
+        </div>
+        <div class="fl nav-text" id="nickname">昵称</div>
+        <div class="fl nav-text cursor setting-box">
+          设置
+          <div class="list-menu">
+            <div class="menu-item" data-target="#nickname-box" data-toggle="modal">修改昵称</div>
+            <div class="menu-item" data-target="#password-box" data-toggle="modal">修改密码</div>
+          </div>
+        </div>
+        <div id="logout" class="fl nav-text cursor">退出</div>
+      </div>
+    </div>
+    <div class="content-box">
+      <div class="aside">
+
+        <div class="accordion" id="accordionExample">
+
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <div class="mb-0">
+                <div class="c-title clearfix" data-toggle="collapse" data-target="#collapseOne">
+                  <span class="fl list-icon">
+                    <i class="fa fa-cube"></i>
+                  </span>
+                  <span class="fl">商品管理</span>
+                  <span class="fr">
+                    <i class="fa fa-angle-right"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+        
+            <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+              <div class="card-body">
+                <div id="ptype" class="c-item">商品类型</div>
+                <div class="c-item active">商品列表</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header" id="headingOne1">
+              <div class="mb-0">
+                <div class="c-title clearfix" data-toggle="collapse" data-target="#collapseOne1">
+                  <span class="fl list-icon">
+                    <i class="fa fa-file-text-o"></i>
+                  </span>
+                  <span class="fl">订单管理</span>
+                  <span class="fr">
+                    <i class="fa fa-angle-right"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+        
+            <div id="collapseOne1" class="collapse" data-parent="#accordionExample">
+              <div class="card-body">
+                <div class="c-item">订单列表</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header" id="headingOne2">
+              <div class="mb-0">
+                <div class="c-title clearfix" data-toggle="collapse" data-target="#collapseOne2">
+                  <span class="fl list-icon">
+                    <i class="fa fa-bar-chart"></i>
+                  </span>
+                  <span class="fl">数据统计</span>
+                  <span class="fr">
+                    <i class="fa fa-angle-right"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+        
+            <div id="collapseOne2" class="collapse" data-parent="#accordionExample">
+              <div class="card-body">
+                <div class="c-item">数据图表</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="content">
+
+        <!-- 商品列表 -->
+        <div id="pro-list">
+          <div class="clearfix">
+
+            <div class="clearfix fl content-item">
+              <div class="fl type-title">商品名称</div>
+              <div class="fl search-box">
+                <input id="type-name" type="text" class="form-control search-item" placeholder="输入商品名称" data-title="pname" />
+              </div>
+            </div>
+
+            <div class="clearfix fl content-item">
+              <div class="fl type-title">商品类型</div>
+              <div class="fl search-box select-box">
+                <select id="search-type" class="form-control search-item" data-title="typeId">
+                  <option value="default">请选择</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="clearfix fl content-item">
+              <div class="fl type-title">商品状态</div>
+              <div class="fl search-box select-box">
+                <select class="form-control search-item" data-title="status">
+                  <option value="default">请选择</option>
+                  <option value="1">上架</option>
+                  <option value="0">下架</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="clearfix fl content-item">
+              <div class="fl type-title">上架日期</div>
+              <div class="fl search-box select-box">
+                <input class="form-control search-item" type="date" data-title="updatedAt" />
+              </div>
+            </div>
+
+            <div class="fl content-item">
+              <button id="search" type="button" class="btn btn-primary">搜索</button>
+            </div>
+          </div>
+
+          <div class="add-type">
+            <button id="post-pro" type="button" class="btn btn-warning" data-toggle="modal" data-target="#type">发布商品</button>
+          </div>
+
+          <div class="table-box">
+            <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th>序号</th>
+                  <th>商品名称</th>
+                  <th>商品类型</th>
+                  <th>状态</th>
+                  <th>发布日期</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody id="product-list">
+                
+              </tbody>
+            </table>
+            <nav>
+              <ul class="pagination justify-content-center">
+                <li id="prev" class="page-item"><a class="page-link" href="#">上一页</a></li>
+                <li class="page-item"><a id="current-page" class="page-link" href="#">1</a></li>
+                <li id="next" class="page-item"><a class="page-link" href="#">下一页</a></li>
+                <li class="page-item"><a class="page-link" href="#">共<span id="total-page"></span>页</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <!-- 发布商品 -->
+        <div id="pro-box" class="hide">
+
+          <div class="back-box">
+            <span id="back">返回</span>
+          </div>
+
+          <div class="clearfix pro-item">
+            <div class="pro-title fl">商品名称</div>
+            <div class="pro-input fl">
+              <input type="text" class="form-control p-name" data-name="pname" placeholder="输入商品名称">
+            </div>
+          </div>
+
+          <div class="clearfix pro-item">
+            <div class="pro-title fl">商品类型</div>
+            <div class="pro-input fl">
+              <select id="type-box" class="form-control p-name" data-name="typeId">
+                <option value="default">请选择</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="clearfix pro-item">
+            <div class="pro-title fl">商品价格</div>
+            <div class="pro-input fl">
+              <input type="text" class="form-control p-name" data-name="price" placeholder="输入商品价格">
+            </div>
+          </div>
+
+          <div class="clearfix pro-item">
+            <div class="pro-title fl">库存</div>
+            <div class="pro-input fl">
+              <input type="text" class="form-control p-name" placeholder="输入库存" data-name="count">
+            </div>
+          </div>
+
+          <div class="clearfix pro-item">
+            <div class="pro-title fl">商品图片</div>
+            <div class="upload-box-img fl">
+              <label class="lable-box">
+                <span>上传图片</span>
+                <input id="file-pro" class="file-box" type="file" />
+                <div class="img-boxing">
+                  <img id="pro-img" class="auto-img" src="" alt="">
+                </div>
+              </label>
+              <div class="dis-box hide"></div>
+            </div>
+            
+          </div>
+
+          <div class="clearfix pro-item">
+            <div class="pro-title fl">详情图片</div>
+            <div class="upload-box-img fl">
+              <label class="lable-box">
+                <span>上传图片</span>
+                <input id="file-detail" class="file-box" type="file" />
+                <div class="img-boxing">
+                  <img id="pro-detail-img" class="auto-img" src="" alt="">
+                </div>
+              </label>
+               <div class="dis-box hide"></div>
+            </div>
+           
+          </div>
+
+          <div class="clearfix pro-item">
+            <div class="pro-title fl">商品状态</div>
+            <div class="pro-input pro-input-box fl">
+              <div class="form-check fl up-box">
+                <input class="form-check-input" type="radio" value="1" name="status" id="r1" checked />
+                <label class="form-check-label" for="r1">上架</label>
+              </div>
+
+              <div class="form-check fl">
+                <input class="form-check-input" type="radio" value="0" name="status" id="r2" />
+                <label class="form-check-label" for="r2">下架</label>
+              </div>
+
+            </div>
+          </div>
+
+
+          <div class="clearfix pro-item">
+            <div class="pro-title fl">商品描述</div>
+            <div class="pro-input fl">
+              <textarea class="form-control pro-text-box p-name" data-name="desc" placeholder="输入商品描述"></textarea>
+            </div>
+          </div>
+
+          <div class="clearfix pro-item">
+            <button id="commit" type="button" class="btn btn-warning send-box">确定发布</button>
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+
+    <!-- 修改昵称 -->
+    <div class="modal fade" id="nickname-box" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">修改昵称</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group row">
+                <label for="new-nickname" class="col-sm-2 col-form-label">新昵称</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="new-nickname" />
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button id="commit-nickname" type="button" class="btn btn-primary">提交</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 修改密码 -->
+    <div class="modal fade" id="password-box" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">修改密码</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group row">
+                <label for="old-password" class="col-sm-2 col-form-label">旧密码</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="old-password" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="new-password" class="col-sm-2 col-form-label">新密码</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="new-password" />
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button id="commit-pwd" type="button" class="btn btn-primary">提交</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="/js/jquery-3.4.1.min.js"></script>
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/utils.js"></script>
+  <script src="/js/products.js"></script>
+  <script src="/js/head.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/register.min.css" />
+    <link rel="stylesheet" href="/css/public.min.css" />
+</head>
+<body>
+ <div class="register-box">
+    <div class="register">
+        <div class="title">找回密码</div>
+        <div class="form-box">
+            <form>
+                <div class="form-group clearfix">
+                  <label class="fl label-box" for=""email>邮箱:</label>
+                  <div class="ipt-box fl">
+                    <input type="text" class="form-control" id="email" data-reg="emailReg" placeholder="请输入您的邮箱...">
+                    <div class="error-msg">邮箱格式不正确</div>
+                </div>
+                </div>
+                
+                  <div class="form-group clearfix">
+                    <label for="password" class="fl label-box">新密码:</label>
+                    <div class="ipt-box fl gl">
+                      
+                  <span class="eyebox"><img class="eye fl" id="eye" src="/images/睁眼 (1).png" alt=""></span>      
+                      <input type="text" class="form-control" id="password"  data-reg="passwordReg" placeholder="输入新密码(6-16字符)">
+                      
+                      
+                      <div class="error-msg">密码支持字母数字下划线组合</div>
+                      
+                    </div>
+                  </div>
+                  <div class="form-group clearfix">
+                    <label for="password" class="fl label-box">验证码:</label>
+                    <div class="ipt-box fl">
+                     <div class="fl code-box">
+                        <input type="text" id="code" class="form-control ipt" placeholder="输入6位数字验证码">
+                        <div class="error-msg">验证码为6位数字</div>
+                     </div>
+                     <div class="fl btn-box">
+                        <button type="button" class="btn btn-secondary btn-block"  id="getCode">获取邮箱验证码</button>
+                     </div>
+                    </div>
+                  </div>
+                  <!-- 找回密码 -->
+                  <div class="commit-btn">
+                     <button  id="forgot-btn" type="button" class="btn btn-primary btn-block">立即找回</button>
+                  </div>
+               <div class="clearfix register-text">
+                <span class="fr" id="login">已有帐号，立即登录</span>
+               </div>
+              </form> 
+        </div>
+    </div>
+    
+ </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/eye.js"></script>
+    <script src="/js/valiForm.js"></script>
+    <script src="/js/forgot.js"></script>
+</body>
+</html>

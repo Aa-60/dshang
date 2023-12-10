@@ -1,0 +1,30 @@
+//配置层
+//参照一下海底捞一捞小程序
+exports.serverOptions={
+    //地址
+    host:'http://localhost',
+    //端口
+    port:10000
+}
+
+//mysql数据库配置
+exports.mysqlOptions={
+    database:'taobeidb',
+    username:'root',
+    password:'123456',
+    //连接地址
+    host:'localhost',
+    dialect:'mysql',
+    timezone:'+08:00',
+   
+    pool:{
+        max:10,
+        min:0,
+        acquire:30000,
+        idle:10000
+    }
+}
+//加盐配置
+exports.saltOptions={
+    tokenSalt:'_tsalt'
+}

@@ -1,0 +1,80 @@
+.select-box {
+    width: 200px
+}
+
+.content-item {
+    margin-bottom: 10px
+}
+
+.pro-title {
+    width: 100px;
+    line-height: 38px
+}
+
+.pro-input {
+    width: 250px
+}
+
+.pro-item {
+    margin-bottom: 20px
+}
+
+.upload-box-img {
+    width: 140px;
+    height: 140px;
+    border: 1px dashed #ddd;
+    text-align: center;
+    line-height: 140px;
+    color: #999;
+    position: relative
+}
+
+.file-box {
+    display: none
+}
+
+.pro-input-box {
+    margin-top: 7px
+}
+
+.up-box {
+    margin-right: 20px
+}
+
+.pro-text-box {
+    display: block;
+    height: 120px !important;
+    resize: none
+}
+
+.send-box {
+    margin-left: 100px
+}
+
+.back-box {
+    margin-bottom: 20px;
+    cursor: pointer
+}
+
+.img-boxing {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%
+}
+
+.lable-box {
+    display: block;
+    width: 100%;
+    height: 100%
+}
+
+.dis-box {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3
+}
